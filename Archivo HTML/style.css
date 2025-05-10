@@ -1,0 +1,46 @@
+.noticia {
+    text-align: center;
+}
+.nombreWeb {
+    color: white;
+    display: inline;
+}
+
+.parteSuperior {
+    background-color: black;
+    height: 50px;
+    border: 5px solid red;
+}
+
+.registro {
+    color: white;
+    display: inline;
+    position: relative;
+    float: right;
+    right: 50px;
+}
+
+.inicioSesion {
+    color: white;
+    display: inline;
+    position: relative;
+    float: right;
+    right: 100px;
+}
+
+#buscar {
+    display: inline;
+    position: relative;
+    float: right;
+    right: 150px;
+    margin-top: 15px;
+}
+
+.buscador {
+    display: inline;
+    position: relative;
+    color: white;
+    float: right;
+    right: 400px;
+    margin-top: 15px;
+}
