@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Administrador de Noticias</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Panel de Administrador - Publicar Noticias</h1>
+
+  <section class="form-section">
+    <input class= "titulo" type="text" id="titulo" placeholder="Título de la noticia">
+    <input class="tema" type="text" id= "tema" placeholder="Indique el tema de la noticia"></input>
+    <input class="foto" type="file" id="foto" accept="image/*">
+
+    <textarea id="direccion" placeholder="Agregue una direccion"></textarea>
+    <textarea id="descripcion" placeholder="Descripcion de la noticia"></textarea>
+    <textarea id="cuerpo" placeholder="Cuerpo de la noticia"></textarea>
+
+
+    <button class="publicar" onclick="publicarNoticia()">Publicar</button>
+    <a class= "volver" href="panelNoticias.html">Volver</a>
+  </section>
+
+  <hr>
+
+  <section id="noticias">
+    <h2>Noticias Publicadas</h2>
+    <div id="contenedor-noticias"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,6 +1,4 @@
-.noticia {
-    text-align: center;
-}
+/* Pantalla para visualizar noticias */
 .nombreWeb {
     color: white;
     display: inline;
@@ -12,20 +10,44 @@
     border: 5px solid red;
 }
 
+.admin {
+    color: white;
+    text-decoration: none;
+    display: inline;
+    position: relative;
+    margin-top: 15px;
+    left: 50px;
+}
+
+.admin:hover {
+    color: red;
+}
+
 .registro {
     color: white;
+    text-decoration: none;
     display: inline;
     position: relative;
     float: right;
     right: 50px;
+    margin-top: 15px;
+}
+.registro:hover {
+    color: red;   
 }
 
 .inicioSesion {
     color: white;
+    text-decoration: none;
     display: inline;
     position: relative;
     float: right;
     right: 100px;
+    margin-top: 15px;
+}
+
+.inicioSesion:hover {
+    color: red;
 }
 
 #buscar {
@@ -43,4 +65,81 @@
     float: right;
     right: 400px;
     margin-top: 15px;
+}
+
+img {
+    width: 55%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 420px;
+}
+
+/* Pantalla para publicar noticias */
+
+body h1 {
+    text-align: center;
+}
+
+.form-section {
+  margin-bottom: 20px;
+  place-items: center;
+}
+
+.titulo {
+  display: block;
+  width: 40%;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 1em;
+  text-align: center;
+}
+
+textarea {
+  display: block;
+  width: 40%;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 1em;
+  text-align: center;
+}
+
+input {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.volver {
+    display: block;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.volver:hover {
+    color: red;
+}
+
+.noticia {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: grid;
+  text-align: center;
+}
+
+.eliminar-btn {
+    cursor: pointer;
+    width: 100px;
+    place-self: center;
+}
+
+.publicar {
+    cursor: pointer;
 }

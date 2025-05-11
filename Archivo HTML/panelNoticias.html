@@ -8,42 +8,22 @@
     <header>
         <div class="parteSuperior">
             <h1 class="nombreWeb">Panel de Noticias</h1>
-            <p class="registro">Registrarse</p>
-            <p class="inicioSesion">Iniciar Sesion</p>
+            <a class="registro" href="#">Registrarse</a>
+            <a class="inicioSesion" href="#">Iniciar Sesion</a>
             
             <label class="buscador" for="buscar">Buscador</label>
             <input type="search" id="buscar" name="buscar"/>
+
+            <a class="admin" href="admin.html">ADMIN</a>
         </div>
     </header>
     <br>
-    <section>
-        <article class="noticia">
-            <h2>Titulo de la noticia</h2>
-            <h3>Descripcion</h3>
-            <p>Fecha y hora</p>
-            <p>Cuerpo de la noticia</p>
-            <h4>Algunas fotos</h4>
-            <h4>Si tiene direccion, aparecera un mapa</h4>
-        </article>
-        <hr>
-        <article class="noticia">
-            <h2>Titulo de la noticia 2</h2>
-            <h3>Descripcion 2</h3>
-            <p>Fecha y hora</p>
-            <p>Cuerpo de la noticia</p>
-            <h4>Algunas fotos</h4>
-            <h4>Si tiene direccion, aparecera un mapa</h4>
-        </article>
-        <hr>
-        <article class="noticia">
-            <h2>Titulo de la noticia 3</h2>
-            <h3>Descripcion 3</h3>
-            <p>Fecha y hora</p>
-            <p>Cuerpo de la noticia</p>
-            <h4>Algunas fotos</h4>
-            <h4>Si tiene direccion, aparecera un mapa</h4>
-        </article>
-        <hr>
+
+    <section id="noticias">
+        <h2>Noticias</h2>
+        <div id="contenedor-noticias"></div>
     </section>
+
+    <script src="noticias.js"></script>
 </body>
 </html>
