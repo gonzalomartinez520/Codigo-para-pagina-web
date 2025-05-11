@@ -1,4 +1,15 @@
-document.addEventListener('DOMContentLoaded', cargarNoticias);
+document.addEventListener('DOMContentLoaded', () => {
+  cargarNoticias();
+
+  // Escuchar cuando el usuario escribe en el buscador
+  const buscador = document.getElementById('buscador');
+  if (buscador) {
+    buscador.addEventListener('input', () => {
+      const termino = buscador.value.trim().toLowerCase();
+      buscarNoticias(termino);
+    });
+  }
+});
 
 function cargarNoticias() {
   const noticias = JSON.parse(localStorage.getItem('noticias')) || [];
@@ -14,6 +25,20 @@ function cargarNoticias() {
 
   // Mostrar todas las noticias
   noticias.forEach(noticia => mostrarNoticia(noticia));
+}
+
+function buscarNoticias(termino) {
+  const noticias = JSON.parse(localStorage.getItem('noticias')) || [];
+  const resultados = noticias.filter(noticia =>
+    noticia.titulo.toLowerCase().includes(termino)
+  );
+
+  // Limpiar resultados anteriores
+  const contenedor = document.getElementById('contenedor-noticias');
+  contenedor.innerHTML = '';
+
+  // Mostrar los resultados filtrados
+  resultados.forEach(noticia => mostrarNoticia(noticia));
 }
 
 function mostrarNoticia(noticia) {
