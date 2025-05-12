@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (buscador) {
     buscador.addEventListener('input', () => {
       const termino = buscador.value.trim().toLowerCase();
-      buscarNoticias(termino);
+      buscarTodasNoticias(termino);
     });
   }
 });
@@ -24,10 +24,10 @@ function cargarNoticias() {
   }
 
   // Mostrar todas las noticias
-  noticias.forEach(noticia => mostrarNoticia(noticia));
+  noticias.forEach(noticia => mostrarNoticias(noticia));
 }
 
-function buscarNoticias(termino) {
+function buscarTodasNoticias(termino) {
   const noticias = JSON.parse(localStorage.getItem('noticias')) || [];
   const resultados = noticias.filter(noticia =>
     noticia.tema.toLowerCase().includes(termino)
@@ -38,10 +38,10 @@ function buscarNoticias(termino) {
   contenedor.innerHTML = '';
 
   // Mostrar los resultados filtrados
-  resultados.forEach(noticia => mostrarNoticia(noticia));
+  resultados.forEach(noticia => mostrarNoticias(noticia));
 }
 
-function mostrarNoticia(noticia) {
+function mostrarNoticias(noticia) {
   const contenedor = document.getElementById('contenedor-noticias');
 
   const div = document.createElement('div');
@@ -50,17 +50,11 @@ function mostrarNoticia(noticia) {
   const titulo = document.createElement('h3');
   titulo.textContent = noticia.titulo;
 
-  const tema = document.createElement('h5');
+  const tema = document.createElement('h4');
   tema.textContent = noticia.tema;
-
-  const direccion = document.createElement('h5');/*Estas dos lineas de codigo tendrian que utilizar los dos servicios para mostrar la ubicacion en el mapa (normalizar y graficar)*/
-  direccion.textContent = noticia.direccion;
 
   const img = document.createElement('img');
   img.src = noticia.imagen;
-
-  const cuerpo = document.createElement('p');
-  cuerpo.textContent = noticia.cuerpo;
 
   const descripcion = document.createElement('p');
   descripcion.textContent = noticia.descripcion;
@@ -68,12 +62,16 @@ function mostrarNoticia(noticia) {
   const fecha = document.createElement('small');
   fecha.textContent = `Publicado el ${noticia.fecha}`;
 
-  div.appendChild(titulo);
   div.appendChild(tema);
   div.appendChild(fecha);
-  div.appendChild(descripcion);
   div.appendChild(img);
-  div.appendChild(cuerpo);
-
+  div.appendChild(titulo);
+  div.appendChild(descripcion);
+ 
   contenedor.appendChild(div);
+
+  div.style.cursor = 'pointer';
+  div.addEventListener('click', () => {
+    window.location.href = `detalleNoticia.html?id=${noticia.id}`;
+  });
 }

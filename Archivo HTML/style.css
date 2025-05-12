@@ -1,7 +1,16 @@
-/* Pantalla para visualizar noticias */
+body {
+    background-color: aliceblue;
+}
+
+/* Pantalla para visualizar todas las noticias */
 .nombreWeb {
     color: white;
     display: inline;
+}
+
+#contenedor-noticias {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .parteSuperior {
@@ -50,37 +59,24 @@
     color: red;
 }
 
-#buscar {
+#buscador {
     display: inline;
     position: relative;
+    color: black;
     float: right;
-    right: 150px;
-    margin-top: 15px;
-}
-
-.buscador {
-    display: inline;
-    position: relative;
-    color: white;
-    float: right;
-    right: 400px;
+    right: 200px;
     margin-top: 15px;
 }
 
 img {
-    width: 55%;
+    width: 97%;
     height: auto;
-    margin-top: 10px;
-    margin-left: 420px;
+    place-self: center;
 }
 
 /* Pantalla para publicar noticias */
 
-body {
-    background-color: aliceblue;
-}
-
-body h1 {
+#panel {
     text-align: center;
 }
 
@@ -131,11 +127,13 @@ button {
 }
 
 .noticia {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-bottom: 15px;
   display: grid;
-  text-align: center;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-indent: 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .eliminar-btn {
@@ -147,6 +145,40 @@ button {
 .publicar {
     cursor: pointer;
 }
+
+section h2 {
+    text-align: center;
+}
+
+/* Pantalla para visualizar el detalle de una noticia */
+
+.detalle-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    min-height: 80vh;
+}
+
+.detalle-contenedor .noticia {
+    max-width: 600px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detalle-contenedor img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/*Pantalla para iniciar sesion*/
 
 .formulario {
     background-color:rgb(42, 42, 42);
