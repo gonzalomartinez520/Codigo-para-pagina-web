@@ -76,6 +76,10 @@ img {
 
 /* Pantalla para publicar noticias */
 
+body {
+    background-color: aliceblue;
+}
+
 body h1 {
     text-align: center;
 }
@@ -142,4 +146,32 @@ button {
 
 .publicar {
     cursor: pointer;
+}
+
+.formulario {
+    background-color:rgb(42, 42, 42);
+    border: 5px double red;
+    border-radius: 10%;
+    border-width: 10px;
+    padding: 50px;
+    margin: auto;
+    margin-top: 200px;
+    width: 380px;
+    
+    
+}
+
+.formulario_input {
+    padding: 15px;
+    width: 80%;
+    margin: 20px;
+}
+
+.formulario_submit{
+    letter-spacing: 2px;
+    width: 89%;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(237, 59, 59);
+    
 }
