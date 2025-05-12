@@ -30,7 +30,7 @@ function cargarNoticias() {
 function buscarNoticias(termino) {
   const noticias = JSON.parse(localStorage.getItem('noticias')) || [];
   const resultados = noticias.filter(noticia =>
-    noticia.titulo.toLowerCase().includes(termino)
+    noticia.tema.toLowerCase().includes(termino)
   );
 
   // Limpiar resultados anteriores
