@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const contenedor = document.getElementById('detalle-noticia');
 
       if (noticia) {
+
+        const tieneMapa = noticia.latitud && noticia.longitud;
+        contenedor.className = tieneMapa ? 'detalle-flex' : 'detalle-centrado';
+
         const div = document.createElement('div');
         div.className = 'noticia';
 
@@ -18,10 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="${noticia.imagen}"/>
           <p><strong></strong> ${noticia.descripcion}</p>
           <p><strong></strong> ${noticia.cuerpo}</p>
-        `; 
-        /*En esta parte, se pasan las coordenadas de la noticia al mapa, y se muestra el mapa*/
-
+        `;
         contenedor.appendChild(div);
+
+        if(tieneMapa) {
+          const mapaDiv = document.createElement('div');
+          mapaDiv.id = 'map';
+          contenedor.appendChild(mapaDiv);
+
+          const map = L.map('map').setView([noticia.longitud, noticia.latitud], 14);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+          }).addTo(map);
+
+          L.marker([noticia.longitud, noticia.latitud]).addTo(map);
+        }
+
       } else {
         contenedor.textContent = 'Noticia no encontrada.';
       }

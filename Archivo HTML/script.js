@@ -9,8 +9,8 @@ function publicarNoticia() {
   const imagenFile = imagenInput.files[0];
   const tema = document.getElementById('tema').value.trim();
   const cuerpo = document.getElementById('cuerpo').value.trim();
-  const cordX = document.getElementById('cordX').value.trim();
   const cordY = document.getElementById('cordY').value.trim();
+  const cordX = document.getElementById('cordX').value.trim();
   
 
   if (!titulo || !descripcion || !tema ||!cuerpo) {
@@ -36,8 +36,8 @@ function publicarNoticia() {
     imagen: imagenURL,
     tema: tema,
     cuerpo: cuerpo,
-    cordX: cordX,
-    cordY: cordY,
+    latitud: cordX,
+    longitud: cordY,
     fecha: new Date().toLocaleString()
   };
 
