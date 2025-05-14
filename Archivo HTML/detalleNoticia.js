@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p><strong></strong> ${noticia.descripcion}</p>
           <p><strong></strong> ${noticia.cuerpo}</p>
         `; 
-        /*Posiblemente en esta parte, es donde la direccion se normaliza y lo mostramos en el mapa*/ 
+        /*En esta parte, se pasan las coordenadas de la noticia al mapa, y se muestra el mapa*/
 
         contenedor.appendChild(div);
       } else {

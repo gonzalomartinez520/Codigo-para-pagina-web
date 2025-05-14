@@ -1,4 +1,5 @@
 // Cargar noticias al inicio
+
 document.addEventListener('DOMContentLoaded', cargarTodasNoticias);
 
 function publicarNoticia() {
@@ -8,10 +9,12 @@ function publicarNoticia() {
   const imagenFile = imagenInput.files[0];
   const tema = document.getElementById('tema').value.trim();
   const cuerpo = document.getElementById('cuerpo').value.trim();
-  const direccion = document.getElementById('direccion').value.trim();
+  const cordX = document.getElementById('cordX').value.trim();
+  const cordY = document.getElementById('cordY').value.trim();
+  
 
   if (!titulo || !descripcion || !tema ||!cuerpo) {
-    alert('Por favor, llena los campos.');
+    alert('Por favor, llena los campos obligatorios.');
     return;
   }
 
@@ -33,7 +36,8 @@ function publicarNoticia() {
     imagen: imagenURL,
     tema: tema,
     cuerpo: cuerpo,
-    direccion: direccion,
+    cordX: cordX,
+    cordY: cordY,
     fecha: new Date().toLocaleString()
   };
 
@@ -52,6 +56,8 @@ function publicarNoticia() {
   document.getElementById('cuerpo').value = '';
   document.getElementById('direccion').value = '';
   document.getElementById('tema').value = '';
+  document.getElementById('cordX').value = '';
+  document.getElementById('cordY').value = '';
 }
 
 function cargarTodasNoticias() {
@@ -112,4 +118,30 @@ function eliminarNoticia(noticia) {
 
     document.getElementById('contenedor-noticias').innerHTML = '';
     cargarTodasNoticias();
+}
+
+function normalizar(){
+  const data = document.getElementById('direccion').value.trim();
+  const outputElement = document.getElementById('recibir-direccion');
+  
+  const urlConVariables = `http://servicios.usig.buenosaires.gob.ar/normalizar/?direccion=${data}`;
+
+// Make a GET request
+fetch(urlConVariables)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    console.log(urlConVariables);
+    const datos =  response.json();
+    console.log(datos);
+    return datos;
+
+  })
+  .then(data => {
+    outputElement.textContent = JSON.stringify(data, null, 2);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 }

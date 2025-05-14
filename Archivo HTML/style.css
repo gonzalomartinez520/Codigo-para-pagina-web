@@ -2,6 +2,10 @@ body {
     background-color: aliceblue;
 }
 
+textarea {
+    resize: none;
+}
+
 /* Pantalla para visualizar todas las noticias */
 .nombreWeb {
     color: white;
@@ -17,19 +21,6 @@ body {
     background-color: black;
     height: 50px;
     border: 5px solid red;
-}
-
-.admin {
-    color: white;
-    text-decoration: none;
-    display: inline;
-    position: relative;
-    margin-top: 15px;
-    left: 50px;
-}
-
-.admin:hover {
-    color: red;
 }
 
 .registro {
@@ -81,8 +72,25 @@ img {
 }
 
 .form-section {
-  margin-bottom: 20px;
-  place-items: center;
+    margin-top: 60px;
+    place-items: center;
+}
+
+#direccion{
+    margin-top: 20px;
+    max-width: 25%;
+    height: 150px;
+    text-align: left;
+    
+}
+#recibir-direccion{
+    max-width: 25%;
+    text-align: left; 
+    height: 300px;  
+}
+
+.enviar-direccion {
+    margin-bottom: 10px;
 }
 
 .titulo {
@@ -187,10 +195,9 @@ section h2 {
     border-width: 10px;
     padding: 50px;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 50px;
     width: 380px;
-    
-    
+   
 }
 
 .formulario_input {
@@ -199,11 +206,25 @@ section h2 {
     margin: 20px;
 }
 
-.formulario_submit{
-    letter-spacing: 2px;
-    width: 89%;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    background-color: rgb(237, 59, 59);
-    
+.boton-inicio-sesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    background-color: red;
+    border-radius: 30px;
+    padding: 10px;
+    width: 50%;
+    margin-left: 23%;
+}
+
+.boton-inicio-sesion:hover {
+    opacity: 70%;
+}
+
+.titulo-login {
+    margin-top: 100px;
+    text-align: center;
+   
 }
