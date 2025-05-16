@@ -31,8 +31,8 @@ function publicarNoticia() {
     imagen: imagenURL,
     tema: tema,
     cuerpo: cuerpo,
-    latitud: cordX,
-    longitud: cordY,
+    cordX: cordX,
+    cordY: cordY,
     fecha: new Date().toLocaleString()
   };
 
