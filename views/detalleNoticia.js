@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (noticia) {
 
-        const tieneMapa = noticia.latitud && noticia.longitud;
+        const tieneMapa = noticia.cordY && noticia.cordX;
         contenedor.className = tieneMapa ? 'detalle-flex' : 'detalle-centrado';
 
         const div = document.createElement('div');
@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
           mapaDiv.id = 'map';
           contenedor.appendChild(mapaDiv);
 
-          const map = L.map('map').setView([noticia.longitud, noticia.latitud], 14);
+          const map = L.map('map').setView([noticia.cordY, noticia.cordX], 14);
 
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
           }).addTo(map);
 
-          L.marker([noticia.longitud, noticia.latitud]).addTo(map);
+          L.marker([noticia.cordY, noticia.cordX]).addTo(map);
         }
 
       } else {
