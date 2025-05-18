@@ -9,5 +9,5 @@ function filtrarNoticias(termino) {
   contenedor.innerHTML = '';
 
   // Mostrar los resultados filtrados
-  resultados.forEach(noticia => mostrarNoticias(noticia));
+  resultados.forEach(noticia => mostrarNoticiasEnPanel(noticia));
 }
