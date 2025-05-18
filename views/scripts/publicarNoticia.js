@@ -52,4 +52,5 @@ function publicarNoticia() {
   document.getElementById('cordY').value = '';
 
   document.getElementById('uploadForm').reset();
+  document.location.reload();
 }
