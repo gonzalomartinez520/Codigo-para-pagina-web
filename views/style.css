@@ -95,21 +95,21 @@ img {
 }
 
 .titulo {
-  display: block;
-  width: 40%;
-  margin-bottom: 10px;
-  padding: 8px;
-  font-size: 1em;
-  text-align: center;
+    display: block;
+    width: 40%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 1em;
+    text-align: center;
 }
 
 textarea {
-  display: block;
-  width: 40%;
-  margin-bottom: 10px;
-  padding: 8px;
-  font-size: 1em;
-  text-align: center;
+    display: block;
+    width: 40%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 1em;
+    text-align: center;
 }
 
 input {
@@ -120,8 +120,8 @@ input {
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 1em;
+    padding: 10px 20px;
+    font-size: 1em;
 }
 
 .volver {
@@ -136,14 +136,14 @@ button {
 }
 
 .noticia {
-  display: grid;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-indent: 8px;
-  border-radius: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-indent: 8px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #contenedor-noticias .noticia:hover {
@@ -174,12 +174,12 @@ section h2 {
 /* Pantalla para visualizar el detalle de una noticia */
 
 .detalle-flex {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  padding: 40px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
 }
 
 .detalle-centrado {
@@ -232,8 +232,7 @@ section h2 {
     padding: 50px;
     margin: auto;
     margin-top: 50px;
-    width: 380px;
-   
+    width: 380px;  
 }
 
 .formulario_input {
@@ -253,6 +252,7 @@ section h2 {
     padding: 10px;
     width: 50%;
     margin-left: 23%;
+    font-family: sans-serif;
 }
 
 .boton-inicio-sesion:hover {
@@ -261,6 +261,50 @@ section h2 {
 
 .titulo-login {
     margin-top: 100px;
-    text-align: center;
-   
+    text-align: center; 
 }
+
+.form-registro{
+    width: 600px;
+    padding: 20px;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: #666;
+    border: 5px double red;
+    border-radius: 11px;
+    margin-top: 100px;
+    
+}
+
+
+.input-reg {
+    margin: 0;
+    padding: 5px;
+    width: 95%;
+    margin-bottom: 20px;
+}
+
+.checkbox {
+    vertical-align: middle;
+    display: inline-block;
+    transform: scale(1.5);
+    margin-left: 10px;
+
+}
+
+h2{
+    text-align: center;
+    margin-top: 20px;
+    font-family: sans-serif;
+    color: #eee;
+    font-weight: 100;
+    padding: 10px;
+
+}
+
+label{
+    color: #eee;
+    font-family: sans-serif;
+    line-height: 2em;
+}
+
