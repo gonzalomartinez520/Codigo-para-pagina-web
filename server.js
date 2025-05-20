@@ -40,8 +40,12 @@ app.get('/detalleNoticia', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'detalleNoticia.html'));
 });
 
-app.get('/sesion', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'sesion.html'));
+app.get('/inicioSesion', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'inicioSesion.html'));
+});
+
+app.get('/registro', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'registro.html'));
 });
 
 // Ruta para subir imagen
