@@ -1,0 +1,96 @@
+body {
+    font-family: sans-serif;
+    background-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23ff0000' fill-opacity='0.4'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+h5 {
+    color: white;
+}
+
+hr {
+    border-color: red;
+    background-color: red;
+    height: 10px;
+}
+
+.parteSuperior {
+    background-color: black;
+    height: 50px;
+    border-bottom: 5px solid red;
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.nombreWeb {
+    color: white;
+    text-decoration: none;
+    font-size: xx-large;
+    display: inline;
+    position: relative;
+    left: 20px;
+    top: 5px;
+}
+
+.nombreWeb:hover {
+    color: red;
+}
+
+.registro {
+    color: white;
+    text-decoration: none;
+    display: inline;
+    position: relative;
+    float: right;
+    right: 50px;
+    margin-top: 15px;
+}
+.registro:hover {
+    color: red;   
+}
+
+.inicioSesion {
+    color: white;
+    text-decoration: none;
+    display: inline;
+    position: relative;
+    float: right;
+    right: 100px;
+    margin-top: 15px;
+}
+
+.inicioSesion:hover {
+    color: red;
+}
+
+.cerrarSesion {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    float: right;
+    margin-top: 15px;
+    right: 100px;
+}
+
+.cerrarSesion:hover {
+    color: red;
+}
+
+img {
+    width: 97%;
+    height: auto;
+    place-self: center;
+}
+
+.noticia {
+    display: grid;
+    background-color: white;
+    box-shadow: 0 0 10px red;
+    border-radius: 10px;
+    text-indent: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

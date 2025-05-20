@@ -1,0 +1,19 @@
+#buscador {
+    display: inline;
+    position: relative;
+    color: black;
+    float: right;
+    right: 200px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#contenedor-noticias {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#contenedor-noticias .noticia:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px red;
+}
