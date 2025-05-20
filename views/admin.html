@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Administrador de Noticias</title>
+  <link rel="stylesheet" href="styles/style-general.css">
+  <link rel="stylesheet" href="styles/style-admin.css"/>
+</head>
+<body>
+  
+
+  <section class="form-section">
+    <h1 id="panel">Panel de Administrador</h1>
+
+    <input class= "titulo" type="text" id="titulo" placeholder="Título de la noticia (Obligatorio)">
+    <input class="tema" type="text" id= "tema" placeholder="Indique el tema de la noticia (Obligatorio)">
+    
+    <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="image" id="imageInput"/>
+    <button type="submit" id="subirImagen-button">Subir Imagen</button>
+    </form>
+    <input type="hidden" id="imagenURL">
+
+    <textarea id="cordX" placeholder="Escribir coordenada X (Opcional)"></textarea>
+    <textarea id="cordY" placeholder="Escribir coordenada Y (Opcional)"></textarea>
+
+    <textarea id="descripcion" placeholder="Descripcion de la noticia (Obligatorio)"></textarea>
+    <textarea id="cuerpo" placeholder="Cuerpo de la noticia (Obligatorio)"></textarea>
+    
+    <button class="publicar" onclick="publicarNoticia()">Publicar</button>
+    <a class= "volver" href="panelNoticias.html">Volver</a>
+
+    <hr>
+    
+    <textarea id="direccion" placeholder="Direccion de tipo calle altura, partido / calle y calle, partido"></textarea>
+    <button class="enviar-direccion" onclick="normalizar()">Enviar direccion</button>
+
+    <textarea id="recibir-direccion" readonly ></textarea>
+    
+  </section>
+
+  <br>
+  <hr>
+
+  <section id="noticias">
+    <h2>Noticias Publicadas</h2>
+    <div id="contenedor-noticias"></div>
+  </section>
+  
+  <script src="scripts/eliminarNoticia.js"></script>
+  <script src="scripts/cargarNoticias.js"></script>
+  <script src="scripts/mostrarNoticiasEnAdmin.js"></script>
+  <script src="scripts/guardarImagen.js"></script>
+  <script src="scripts/publicarNoticia.js"></script>
+  <script src="scripts/normalizarDireccion.js"></script>
+</body>
+</html>
