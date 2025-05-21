@@ -11,42 +11,43 @@
         <div class="parteSuperior">
             <a class="nombreWeb" href="panelNoticias.html">Panel de Noticias</a>
             <a class="registro" href="registro.html">Registrarse</a>
-            <a class="inicioSesion" href="inicioSesion.html">Iniciar Sesion</a>
-            <a class="cerrarSesion" href="#">Cerrar Sesion</a>
+            <a class="inicioSesion" href="inicioSesion.html">Iniciar Sesión</a>
+            <a class="cerrarSesion" href="#">Cerrar Sesión</a>
         </div>
     </header>
     <br>
 
-    <form class="form-registro">
+    <form class="form-registro" action="panelNoticias.html" method="GET" onsubmit="return validarRegistro()">
         <h2 id="titulo-reg">REGISTRATE AHORA</h2>
+
         <div>
             <label>Nombre</label>
-            <input class="input-reg" type="text" placeholder="Nombre">
+            <input class="input-reg" type="text" name="nombre" placeholder="Nombre" required>
         </div>
 
         <div>
             <label>DNI</label>
-            <input  class="input-reg" type="text" placeholder= "DNI"> 
+            <input class="input-reg" type="text" name="dni" placeholder="DNI" required>
         </div>
 
         <div>
             <label>Email</label>
-            <input class="input-reg" type="text" placeholder="Email">
+            <input class="input-reg" type="email" name="email" placeholder="Email" required>
         </div>
 
         <div>
             <label>Contraseña</label>
-            <input class="input-reg" type="password" placeholder="Contraseña">
+            <input class="input-reg" type="password" name="password" placeholder="Contraseña" required>
         </div>
 
         <div>
             <label>Confirmar contraseña</label>
-            <input class="input-reg" type="password" placeholder="Confirmar Contraseña">
+            <input class="input-reg" type="password" name="confirmPassword" placeholder="Confirmar Contraseña" required>
         </div>
 
         <div>
             <label>
-                <input type="checkbox" class="checkbox">
+                <input type="checkbox" class="checkbox" id="terminos" required>
                 Acepto los términos y condiciones
             </label>
         </div>
@@ -58,10 +59,28 @@
             </label>
         </div>
 
-        <a class="boton-inicio-sesion" href="panelNoticias.html">Registrarse</a>
-
+        <button class="boton-inicio-sesion" type="submit">Registrarse</button>
     </form>
 
     <script src="scripts/cierreSesion.js"></script>
+    <script>
+        function validarRegistro() {
+            const pass = document.querySelector('input[name="password"]').value.trim();
+            const confirm = document.querySelector('input[name="confirmPassword"]').value.trim();
+            const terminos = document.getElementById('terminos').checked;
+
+            if (pass !== confirm) {
+                alert("Las contraseñas no coinciden.");
+                return false;
+            }
+
+            if (!terminos) {
+                alert("Debe aceptar los términos y condiciones.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>

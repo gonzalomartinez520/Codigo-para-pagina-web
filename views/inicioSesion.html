@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="styles/style-general.css">
     <link rel="stylesheet" href="styles/style-inicioSesion.css"/>
-    <title>Inicia Sesion</title>
+    <title>Inicia Sesión</title>
 </head>
 <body>
 
@@ -11,20 +11,31 @@
         <div class="parteSuperior">
             <a class="nombreWeb" href="panelNoticias.html">Panel de Noticias</a>
             <a class="registro" href="registro.html">Registrarse</a>
-            <a class="inicioSesion" href="inicioSesion.html">Iniciar Sesion</a>
-            <a class="cerrarSesion" href="#">Cerrar Sesion</a>
+            <a class="inicioSesion" href="inicioSesion.html">Iniciar Sesión</a>
+            <a class="cerrarSesion" href="#">Cerrar Sesión</a>
         </div>
     </header>
     <br>
 
-    
-    <form class="formulario">
-        <h2 class="titulo-login">INICIO SESION</h2>
-        <input class="formulario_input" type="email" placeholder="Email">
-        <input class="formulario_input" type="password" placeholder="Contraseña">
-        <a class="boton-inicio-sesion" href="panelNoticias.html">Iniciar Sesion</a>
+    <form class="formulario" action="panelNoticias.html" method="GET" onsubmit="return validarFormulario()">
+        <h2 class="titulo-login">INICIO SESIÓN</h2>
+        <input class="formulario_input" type="email" placeholder="Email" name="email" required>
+        <input class="formulario_input" type="password" placeholder="Contraseña" name="password" required>
+        <button class="boton-inicio-sesion" type="submit">Iniciar Sesión</button>
     </form>
 
     <script src="scripts/cierreSesion.js"></script>
+    <script>
+        function validarFormulario() {
+            const email = document.querySelector('input[name="email"]').value.trim();
+            const password = document.querySelector('input[name="password"]').value.trim();
+            
+            if (!email || !password) {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
